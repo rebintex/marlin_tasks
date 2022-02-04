@@ -31,9 +31,6 @@
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
                         </div>
                     </div>
-                    <?php 
-                        $arrayLists = ["Reports", "Analytics", "Export", "Storage"];                    
-                    ?>
                     <div class="panel-container show">
                         <div class="panel-content">
                             <div class="panel-content">
@@ -48,7 +45,9 @@
                                     </div>
                                     <ul id="js-list-msg" class="list-group px-2 pb-2 js-list-filter">
                                         
-                                        <?php foreach($arrayLists as $arrElem) : ?>
+                                        <?php 
+                                         $arrayLists = ["Reports", "Analytics", "Export", "Storage"];  
+                                        foreach($arrayLists as $arrElem) : ?>
                                         
                                         <li class="list-group-item">
                                             <span data-filter-tags="reports file"><?php echo $arrElem; ?></span>
