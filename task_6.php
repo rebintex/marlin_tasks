@@ -32,59 +32,67 @@
                     </div>
                     <div class="panel-container show">
                         <div class="panel-content">
+                        <?php 
+                                $developers = [
+
+                                    ['banned' => '',
+                                     'img' => 'sunny.png',
+                                     'name' => 'Sunny A.',
+                                     'job' => 'UI/UX Expert',
+                                     'role' => 'Lead Author',
+                                     'twitter' => '@myplaneticket',
+                                     'wrapboot' => 'myorange',
+                                     'wb_title' => 'Contact Sunny'  
+                                    ],
+                                    ['banned' => '',
+                                     'img' => 'josh.png',
+                                     'name' => 'Jos K.',
+                                     'job' => 'ASP.NET Developer',
+                                     'role' => 'Partner &amp; Contributor',
+                                     'twitter' => '@atlantez',
+                                     'wrapboot' => 'Walapa',
+                                     'wb_title' => 'Contact Jos'  
+                                    ],
+                                    ['banned' => 'banned',
+                                     'img' => 'jovanni.png',
+                                     'name' => 'Jovanni L.',
+                                     'job' => 'PHP Developer',
+                                     'role' => 'Partner &amp; Contributor',
+                                     'twitter' => '@lodev09',
+                                     'wrapboot' => 'lodev09',
+                                     'wb_title' => 'Contact Jovanni'  
+                                    ],
+                                    ['banned' => 'banned',
+                                     'img' => 'roberto.png',
+                                     'name' => 'Roberto R.',
+                                     'job' => 'Rails Developer',
+                                     'role' => 'Partner &amp; Contributor',
+                                     'twitter' => '@sildur',
+                                     'wrapboot' => 'sildur',
+                                     'wb_title' => 'Contact Roberto'  
+                                    ],
+
+                                ];
+                            ?>
                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
-                            <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                <img src="img/demo/authors/sunny.png" alt="Sunny A." class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
+                           <?php foreach($developers as $dev) : ?>
+                            
+                            <div class="<?php echo $dev['banned'] ? $dev['banned'] : null; ?> rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
+                                <img src="img/demo/authors/<?php echo $dev['img']; ?>" alt="<?php echo $dev['name']; ?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                 <div class="ml-2 mr-3">
                                     <h5 class="m-0">
-                                        Sunny A. (UI/UX Expert)
+                                    <?php echo $dev['name']; ?> (<?php echo $dev['job']; ?>)
                                         <small class="m-0 fw-300">
-                                            Lead Author
+                                        <?php echo $dev['role']; ?>
                                         </small>
                                     </h5>
-                                    <a href="https://twitter.com/@myplaneticket" class="text-info fs-sm" target="_blank">@myplaneticket</a> -
-                                    <a href="https://wrapbootstrap.com/user/myorange" class="text-info fs-sm" target="_blank" title="Contact Sunny"><i class="fal fa-envelope"></i></a>
+                                    <a href="https://twitter.com/<?php echo $dev['twitter']; ?>" class="text-info fs-sm" target="_blank"><?php echo $dev['twitter']; ?></a> -
+                                    <a href="https://wrapbootstrap.com/user/<?php echo $dev['wrapboot']; ?>" class="text-info fs-sm" target="_blank" title="<?php echo $dev['wb_title']; ?>"><i class="fal fa-envelope"></i></a>
                                 </div>
                             </div>
-                            <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                <img src="img/demo/authors/josh.png" alt="Jos K." class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
-                                <div class="ml-2 mr-3">
-                                    <h5 class="m-0">
-                                        Jos K. (ASP.NET Developer)
-                                        <small class="m-0 fw-300">
-                                            Partner &amp; Contributor
-                                        </small>
-                                    </h5>
-                                    <a href="https://twitter.com/@atlantez" class="text-info fs-sm" target="_blank">@atlantez</a> -
-                                    <a href="https://wrapbootstrap.com/user/Walapa" class="text-info fs-sm" target="_blank" title="Contact Jos"><i class="fal fa-envelope"></i></a>
-                                </div>
-                            </div>
-                            <div class="banned rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                <img src="img/demo/authors/jovanni.png" alt="Jovanni Lo" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
-                                <div class="ml-2 mr-3">
-                                    <h5 class="m-0">
-                                        Jovanni L. (PHP Developer)
-                                        <small class="m-0 fw-300">
-                                            Partner &amp; Contributor
-                                        </small>
-                                    </h5>
-                                    <a href="https://twitter.com/@lodev09" class="text-info fs-sm" target="_blank">@lodev09</a> -
-                                    <a href="https://wrapbootstrap.com/user/lodev09" class="text-info fs-sm" target="_blank" title="Contact Jovanni"><i class="fal fa-envelope"></i></a>
-                                </div>
-                            </div>
-                            <div class="banned rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                <img src="img/demo/authors/roberto.png" alt="Jovanni Lo" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
-                                <div class="ml-2 mr-3">
-                                    <h5 class="m-0">
-                                        Roberto R. (Rails Developer)
-                                        <small class="m-0 fw-300">
-                                            Partner &amp; Contributor
-                                        </small>
-                                    </h5>
-                                    <a href="https://twitter.com/@sildur" class="text-info fs-sm" target="_blank">@sildur</a> -
-                                    <a href="https://wrapbootstrap.com/user/sildur" class="text-info fs-sm" target="_blank" title="Contact Roberto"><i class="fal fa-envelope"></i></a>
-                                </div>
-                            </div>
+
+                            <?php endforeach; ?>
+            
                         </div>
                         </div>
                     </div>
