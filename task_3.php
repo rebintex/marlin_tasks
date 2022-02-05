@@ -33,9 +33,26 @@
                     <div class="panel-container show">
                         <div class="panel-content">
                             <ol class="breadcrumb page-breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Главная</a></li>
-                                <li class="breadcrumb-item"><a href="#">PHP</a></li>
-                                <li class="breadcrumb-item active">Функции</li>
+                                <?php $arrayMenu = ["Главная", "PHP", "Функции"];
+                                
+                                foreach($arrayMenu as $menu) :  
+                                $lastElem = end($arrayMenu);
+                                ?>               
+                                
+
+                                <li class="breadcrumb-item">
+                                    <?php
+                                     
+                                        if($menu === $lastElem) {
+                                            echo $lastElem; 
+                                        } 
+                                        else { 
+                                            echo "<a href='#'>". $menu . "</a>";
+                                    }
+                                    ?>
+                                </li>
+                                
+                                <?php endforeach; ?>
                             </ol>
                         </div>
                     </div>

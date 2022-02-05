@@ -30,36 +30,47 @@
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
                         </div>
                     </div>
+                    <?php 
+                    
+                        $tasks = [
+                            ['title' => 'My Tasks',
+                             'counter' => '130 / 500',
+                             'bg' => 'fusion-400',
+                             'width&area' => 65,  
+                            ],
+                            ['title' => 'Transfered',
+                             'counter' => '440 TB',
+                             'bg' => 'success-500',
+                             'width&area' => 34,  
+                            ],
+                            ['title' => 'Bugs Squashed',
+                             'counter' => '77%',
+                             'bg' => 'info-400',
+                             'width&area' => 77,  
+                            ],
+                            ['title' => 'User Testing',
+                             'counter' => '7 days',
+                             'bg' => 'primary-300',
+                             'width&area' => 84,  
+                            ],
+                        ];
+                    
+                    
+                    ?>
                     <div class="panel-container show">
                         <div class="panel-content">
-                            <div class="d-flex mt-2">
-                                My Tasks
-                                <span class="d-inline-block ml-auto">130 / 500</span>
+                            <?php foreach($tasks as $task) :?>
+
+                            <div class="d-flex">
+                                <?php echo $task['title']; ?>
+                                <span class="d-inline-block ml-auto"><?php echo $task['counter']; ?></span>
                             </div>
                             <div class="progress progress-sm mb-3">
-                                <div class="progress-bar bg-fusion-400" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-<?php echo $task['bg']; ?>" role="progressbar" style="width: <?php echo $task['width&area']; ?>%;" 
+                                aria-valuenow="<?php echo $task['width&area']; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <div class="d-flex">
-                                Transfered
-                                <span class="d-inline-block ml-auto">440 TB</span>
-                            </div>
-                            <div class="progress progress-sm mb-3">
-                                <div class="progress-bar bg-success-500" role="progressbar" style="width: 34%;" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="d-flex">
-                                Bugs Squashed
-                                <span class="d-inline-block ml-auto">77%</span>
-                            </div>
-                            <div class="progress progress-sm mb-3">
-                                <div class="progress-bar bg-info-400" role="progressbar" style="width: 77%;" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="d-flex">
-                                User Testing
-                                <span class="d-inline-block ml-auto">7 days</span>
-                            </div>
-                            <div class="progress progress-sm mb-g">
-                                <div class="progress-bar bg-primary-300" role="progressbar" style="width: 84%;" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <?php endforeach; ?>
+
                         </div>
                     </div>
                 </div>
