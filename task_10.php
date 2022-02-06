@@ -1,3 +1,25 @@
+<?php 
+
+require "database.php";
+$alert = '';
+$message = '';
+var_dump($conn);
+
+if($_POST) {
+
+    $text = $_POST['text'];
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->exec("INSERT INTO text (text) VALUES ('$text') ");
+    echo $conn->$text;
+    if (!empty($text)) {
+        $message = "Text is sent to the database!";
+      } else {
+        $message = "Empty field!";
+      } 
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,10 +59,10 @@
                                     <div class="alert alert-danger fade show" role="alert">
                                         You should check in on some of those fields below.
                                     </div>
-                                    <form action="">
+                                    <form action="task_10.php" method="POST">
                                         <label class="form-label" for="simpleinput">Text</label>
-                                        <input type="text" id="simpleinput" class="form-control">
-                                        <button class="btn btn-success mt-3">Submit</button>
+                                        <input type="text" id="simpleinput" name="text" class="form-control">
+                                        <button class="btn btn-success mt-3" name=submit>Submit</button>
                                     </form>
                                 </div>
                             </div>

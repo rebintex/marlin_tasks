@@ -1,3 +1,23 @@
+<?php 
+
+require "database.php";
+$message = '';
+
+if($_POST) {
+
+    $text = $_POST['text'];
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->exec("INSERT INTO text (text) VALUES ('$text')");
+
+    if (!empty($text)) {
+        $message = "Text is sent to the database!";
+      } else {
+        $message = "Empty field!";
+      } 
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,10 +55,11 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <form action="">
+                                    <h3><?php echo $message; ?></h3>
+                                    <form action="task_9.php" method="POST">
                                         <label class="form-label" for="simpleinput">Text</label>
-                                        <input type="text" id="simpleinput" class="form-control">
-                                        <button class="btn btn-success mt-3">Submit</button>
+                                        <input type="text" id="simpleinput" name="text" class="form-control">
+                                        <button class="btn btn-success mt-3" name=submit>Submit</button>
                                     </form>
                                 </div>
                             </div>
