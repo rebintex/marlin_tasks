@@ -1,7 +1,10 @@
 <?php 
     require "database.php";
 
-    $data = $conn->query("SELECT * FROM developers")->fetchAll(PDO::FETCH_ASSOC);
+    $sql = "SELECT * FROM developers";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $data = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
 ?>

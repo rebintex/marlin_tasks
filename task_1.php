@@ -46,11 +46,17 @@
                                     <ul id="js-list-msg" class="list-group px-2 pb-2 js-list-filter">
                                         
                                         <?php 
-                                         $arrayLists = ["Reports", "Analytics", "Export", "Storage"];  
-                                        foreach($arrayLists as $arrElem) : ?>
-                                        
+                                         $arrayLists = [
+                                            ["title" => "Reports", "filter" => "reports file"],
+                                            ["title" => "Analytics", "filter" => "analytics graphs"],
+                                            ["title" => "Export", "filter" => "export download"],
+                                            ["title" => "Storage", "filter" => "storage"],
+                                            ];
+
+                                            foreach($arrayLists as $arrElem) :
+                                        ?>
                                         <li class="list-group-item">
-                                            <span data-filter-tags="reports file"><?php echo $arrElem; ?></span>
+                                            <span data-filter-tags="<?php echo $arrElem["filter"]; ?>"><?php echo $arrElem["title"]; ?></span>
                                         </li>
 
                                         <?php endforeach; ?>
